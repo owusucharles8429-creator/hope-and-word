@@ -5,35 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hope & Word | Prayer • Encouragement • Bible</title>
   <meta name="description" content="A simple place for prayer, encouragement and Bible truth. You are not alone.">
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#f7f4ef;color:#202124;line-height:1.6}
-    header{background:linear-gradient(135deg,#251b47,#5d3fa3);color:#fff;padding:55px 20px;text-align:center}
-    header h1{font-size:clamp(2.3rem,8vw,4.2rem);margin-bottom:10px}
-    header p{font-size:1.08rem;max-width:650px;margin:auto;opacity:.94}
-    .wrap{max-width:1050px;margin:auto;padding:28px 18px 60px}
-    .verse{background:#fff;border-radius:20px;padding:28px;box-shadow:0 8px 25px #00000012;margin-top:-28px;position:relative}
-    .verse h2{color:#5d3fa3;margin-bottom:8px}
-    .verse p{font-size:1.2rem;font-style:italic}
-    .verse small{display:block;margin-top:10px;font-weight:bold;color:#666}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:25px}
-    .card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 5px 18px #0000000d}
-    .card h2{color:#5d3fa3;margin-bottom:8px}
-    .btn{display:inline-block;border:0;border-radius:12px;padding:12px 17px;background:#5d3fa3;color:#fff;font-weight:bold;text-decoration:none;cursor:pointer;margin-top:12px}
-    .btn:hover{opacity:.9}
-    textarea{width:100%;min-height:130px;border:1px solid #ddd;border-radius:12px;padding:12px;margin-top:12px;font:inherit;resize:vertical}
-    .note{font-size:.9rem;color:#666;margin-top:8px}
-    .prayer{display:none;margin-top:15px;background:#f1edfb;padding:15px;border-radius:12px}
-    footer{text-align:center;padding:25px;color:#777;font-size:.9rem}
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f7f4ef;
+      color:#202124;
+      line-height:1.6
+    }
+
+    header{
+      background:linear-gradient(135deg,#251b47,#5d3fa3);
+      color:#fff;
+      padding:55px 20px;
+      text-align:center
+    }
+
+    header h1{
+      font-size:clamp(2.3rem,8vw,4.2rem);
+      margin-bottom:10px
+    }
+
+    header p{
+      font-size:1.08rem;
+      max-width:650px;
+      margin:auto;
+      opacity:.94
+    }
+
+    .wrap{
+      max-width:1050px;
+      margin:auto;
+      padding:28px 18px 60px
+    }
+
+    .verse{
+      background:#fff;
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 8px 25px #00000012;
+      margin-top:-28px;
+      position:relative
+    }
+
+    .verse h2{
+      color:#5d3fa3;
+      margin-bottom:8px
+    }
+
+    .verse p{
+      font-size:1.2rem;
+      font-style:italic
+    }
+
+    .verse small{
+      display:block;
+      margin-top:10px;
+      font-weight:bold;
+      color:#666
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:25px
+    }
+
+    .card{
+      background:#fff;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 5px 18px #0000000d
+    }
+
+    .card h2{
+      color:#5d3fa3;
+      margin-bottom:8px
+    }
+
+    .btn{
+      display:inline-block;
+      border:0;
+      border-radius:12px;
+      padding:12px 17px;
+      background:#5d3fa3;
+      color:#fff;
+      font-weight:bold;
+      text-decoration:none;
+      cursor:pointer;
+      margin-top:12px
+    }
+
+    .btn:hover{
+      opacity:.9
+    }
+
+    textarea{
+      width:100%;
+      min-height:130px;
+      border:1px solid #ddd;
+      border-radius:12px;
+      padding:12px;
+      margin-top:12px;
+      font:inherit;
+      resize:vertical
+    }
+
+    .prayer{
+      display:none;
+      margin-top:15px;
+      background:#f1edfb;
+      padding:15px;
+      border-radius:12px
+    }
+
+    .books{
+      margin-top:25px
+    }
+
+    .book-btn{
+      display:block;
+      margin-top:14px;
+      text-align:center
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      color:#777;
+      font-size:.9rem
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Hope & Word</h1>
     <p>A simple place for prayer, encouragement and Bible truth. Whatever you are facing, you are not alone.</p>
   </header>
 
   <main class="wrap">
+
     <section class="verse">
       <h2>Today's Word</h2>
       <p>“The Lord is close to the brokenhearted and saves those who are crushed in spirit.”</p>
@@ -41,61 +157,115 @@
     </section>
 
     <section class="grid">
+
       <article class="card">
         <h2>🙏 Need Prayer?</h2>
         <p>Write your prayer request below. This first version keeps it on your device; it does not send your request anywhere.</p>
+
         <textarea id="request" placeholder="Write what you would like prayer for..."></textarea>
+
         <button class="btn" onclick="showPrayer()">Give Me a Prayer</button>
+
         <div id="prayer" class="prayer"></div>
       </article>
 
       <article class="card">
         <h2>❤️ A Word for You</h2>
         <p>You may feel delayed, forgotten or tired, but your present situation does not have to be your final chapter.</p>
+
         <button class="btn" onclick="encourage()">Encourage Me</button>
+
         <div id="encouragement" class="prayer"></div>
       </article>
 
       <article class="card">
         <h2>📖 Bible Study</h2>
         <p>Start with simple topics: faith, obedience, forgiveness, prayer, love, hope and trusting God.</p>
+
         <a class="btn" href="#topics">View Topics</a>
       </article>
+
+    </section>
+
+    <section class="card books">
+
+      <h2>📚 Christian Books</h2>
+
+      <p>Read and be encouraged through these books.</p>
+
+      <a class="btn book-btn" href="book.html">
+        📖 THE POWER OF OBEDIENCE
+      </a>
+
+      <a class="btn book-btn" href="battle.html">
+        📕 WHY GOD ALLOWS BATTLE BEFORE BREAKTHROUGH
+      </a>
+
     </section>
 
     <section class="card" id="topics" style="margin-top:18px">
+
       <h2>📚 Simple Bible Topics</h2>
+
       <p><b>Faith:</b> Trusting God even when you cannot see the whole path.</p>
+
       <p><b>Obedience:</b> Choosing to follow God's word even when it is difficult.</p>
+
       <p><b>Hope:</b> Believing that God can still bring light into a difficult season.</p>
+
       <p><b>Love:</b> Showing patience, kindness and care toward others.</p>
+
       <p><b>Prayer:</b> Bringing your heart honestly before God.</p>
+
     </section>
+
   </main>
 
-  <footer>Hope & Word • Built to encourage people, one person at a time.</footer>
+  <footer>
+    Hope & Word • Built to encourage people, one person at a time.
+  </footer>
 
   <script>
+
     const prayers = [
       "Lord, meet this person exactly where they are. Give them peace, strength and wisdom, and help them remember that they are not alone. Amen.",
+
       "Father, bring hope into this situation. Open the right doors, close the wrong ones, and give this person courage for the next step. Amen.",
+
       "God, strengthen their heart today. Where there is fear, bring peace; where there is confusion, bring wisdom; where there is weariness, bring renewed strength. Amen."
     ];
+
     const encouragements = [
       "Don't give up because this chapter is difficult. Keep taking the next right step.",
+
       "A slow season is not necessarily a wasted season. Keep growing, praying and moving forward.",
+
       "You are allowed to rest without giving up. Take today one step at a time."
     ];
+
     function showPrayer(){
+
       const box=document.getElementById("prayer");
+
       box.style.display="block";
-      box.textContent=prayers[Math.floor(Math.random()*prayers.length)];
+
+      box.textContent=
+        prayers[Math.floor(Math.random()*prayers.length)];
+
     }
+
     function encourage(){
+
       const box=document.getElementById("encouragement");
+
       box.style.display="block";
-      box.textContent=encouragements[Math.floor(Math.random()*encouragements.length)];
+
+      box.textContent=
+        encouragements[Math.floor(Math.random()*encouragements.length)];
+
     }
+
   </script>
+
 </body>
 </html>
